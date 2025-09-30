@@ -2,7 +2,7 @@
   The CSS in this style tag is based off of Bear Blog's default CSS.
   https://github.com/HermanMartinus/bearblog/blob/297026a877bc2ab2b3bdfbd6b9f7961c350917dd/templates/styles/blog/default.css
   License MIT: https://github.com/HermanMartinus/bearblog/blob/master/LICENSE.md
- */
+*/
 
 :root {
 	--accent: #2337ff;
@@ -152,4 +152,55 @@ hr {
 	clip-path: inset(50%);
 	/* added line to stop words getting smushed together (as they go onto separate lines and some screen readers do not understand line feeds as a space */
 	white-space: nowrap;
+}
+
+/* Styles for the inserted content image section */
+.content-image-wrapper {
+	display: flex;
+	flex-direction: column;
+	position: relative;
+	margin-top: 120px;
+	min-height: 100px;
+	padding: 60px 20px 20px;
+	max-width: 1200px;
+	margin-left: auto;
+	margin-right: auto;
+	width: 100%;
+}
+
+.content-section {
+	display: flex;
+	flex-direction: column;
+	position: relative;
+	margin-top: 20px;
+	height: auto;
+	width: 100%;
+	align-self: stretch;
+	flex-grow: 1;
+	max-width: 1200px;
+}
+
+.image-caption {
+	/* caption styling */
+	margin-bottom: 8px;
+}
+
+.new-image {
+	aspect-ratio: 1.78;
+	object-fit: cover;
+	object-position: center;
+	width: 100%;
+	margin-top: 20px;
+	min-height: 20px;
+	min-width: 20px;
+	overflow: hidden;
+	border-radius: 12px;
+	box-shadow: var(--box-shadow);
+}
+
+@media (max-width: 720px) {
+	.content-image-wrapper {
+		padding: 40px 10px 10px;
+		margin-top: 60px;
+	}
 }
