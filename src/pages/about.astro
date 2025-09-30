@@ -43,6 +43,71 @@ import Layout from '../layouts/BlogPost.astro';
 		urna porttitor rhoncus dolor purus non. Amet dictum sit amet justo donec enim.
 	</p>
 
+	<div class="about-image-wrapper">
+		<section class="about-content-section" data-name="section">
+			<div class="about-image-caption">
+				<strong>New image</strong>
+			</div>
+			<img
+				loading="lazy"
+				srcset="https://cdn.builder.io/api/v1/image/assets%2F3df0381259c14c3ab3c8f44d50a2e2e8%2F11fa4a9a098945b6a215af1f69f6fbac?width=100 100w, https://cdn.builder.io/api/v1/image/assets%2F3df0381259c14c3ab3c8f44d50a2e2e8%2F11fa4a9a098945b6a215af1f69f6fbac?width=200 200w, https://cdn.builder.io/api/v1/image/assets%2F3df0381259c14c3ab3c8f44d50a2e2e8%2F11fa4a9a098945b6a215af1f69f6fbac?width=400 400w, https://cdn.builder.io/api/v1/image/assets%2F3df0381259c14c3ab3c8f44d50a2e2e8%2F11fa4a9a098945b6a215af1f69f6fbac?width=800 800w, https://cdn.builder.io/api/v1/image/assets%2F3df0381259c14c3ab3c8f44d50a2e2e8%2F11fa4a9a098945b6a215af1f69f6fbac?width=1200 1200w, https://cdn.builder.io/api/v1/image/assets%2F3df0381259c14c3ab3c8f44d50a2e2e8%2F11fa4a9a098945b6a215af1f69f6fbac?width=1600 1600w, https://cdn.builder.io/api/v1/image/assets%2F3df0381259c14c3ab3c8f44d50a2e2e8%2F11fa4a9a098945b6a215af1f69f6fbac?width=2000 2000w"
+				class="about-featured-image"
+				alt=""
+			/>
+		</section>
+	</div>
+
+	<style>
+		.about-image-wrapper {
+			display: flex;
+			flex-direction: column;
+			position: relative;
+			margin-top: 120px;
+			min-height: 100px;
+			padding: 60px 20px 20px;
+			max-width: 1200px;
+			margin-left: auto;
+			margin-right: auto;
+			width: 100%;
+		}
+
+		.about-content-section {
+			display: flex;
+			flex-direction: column;
+			position: relative;
+			margin-top: 20px;
+			height: auto;
+			width: 100%;
+			align-self: stretch;
+			flex-grow: 1;
+			max-width: 1200px;
+		}
+
+		.about-image-caption {
+			margin-bottom: 8px;
+		}
+
+		.about-featured-image {
+			aspect-ratio: 1.78;
+			object-fit: cover;
+			object-position: center;
+			width: 100%;
+			margin-top: 20px;
+			min-height: 20px;
+			min-width: 20px;
+			overflow: hidden;
+			border-radius: 12px;
+			box-shadow: var(--box-shadow);
+		}
+
+		@media (max-width: 720px) {
+			.about-image-wrapper {
+				padding: 40px 10px 10px;
+				margin-top: 60px;
+			}
+		}
+	</style>
+
 	<p>
 		Mattis ullamcorper velit sed ullamcorper morbi tincidunt. Tortor posuere ac ut consequat semper
 		viverra. Tellus mauris a diam maecenas sed enim ut sem viverra. Venenatis urna cursus eget nunc

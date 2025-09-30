@@ -1,0 +1,69 @@
+---
+---
+
+<button id="go-to-top" class="go-to-top-button" aria-label="Go to top" title="Go to top">
+	<svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+		<path d="M12 5l-7 7h4v7h6v-7h4l-7-7z" fill="currentColor" />
+	</svg>
+</button>
+
+<style>
+	.go-to-top-button {
+		position: fixed;
+		right: 2rem;
+		bottom: 2rem;
+		width: 44px;
+		height: 44px;
+		border-radius: 50%;
+		background: var(--accent);
+		color: white;
+		border: none;
+		box-shadow: var(--box-shadow);
+		display: inline-flex;
+		align-items: center;
+		justify-content: center;
+		cursor: pointer;
+		opacity: 0;
+		visibility: hidden;
+		transform: translateY(10px);
+		transition: opacity 0.2s ease, transform 0.2s ease, visibility 0.2s;
+		z-index: 1000;
+	}
+
+	.go-to-top-button.visible {
+		opacity: 1;
+		visibility: visible;
+		transform: translateY(0);
+	}
+
+	.go-to-top-button:focus {
+		outline: 2px solid rgba(255,255,255,0.3);
+		outline-offset: 2px;
+	}
+
+	@media (max-width: 720px) {
+		.go-to-top-button {
+			right: 1rem;
+			bottom: 1rem;
+			width: 40px;
+			height: 40px;
+		}
+	}
+</style>
+
+<script>
+	(function () {
+		const btn = document.getElementById('go-to-top');
+		if (!btn) return;
+
+		const toggle = () => {
+			if (window.scrollY > 300) btn.classList.add('visible');
+			else btn.classList.remove('visible');
+		};
+
+		window.addEventListener('scroll', toggle, { passive: true });
+		btn.addEventListener('click', () => window.scrollTo({ top: 0, behavior: 'smooth' }));
+		// ensure initial state
+		toggle();
+	})();
+</script>
